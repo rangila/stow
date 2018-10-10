@@ -1,0 +1,60 @@
+" Forget being compatible with good ol' vi
+set nocompatible
+
+" Get that filetype stuff happening
+filetype on
+
+" Store swapfiles into a single directory
+" First create
+" mkdir -p $HOME/.vim/swapfiles
+set directory=$HOME/.vim/swapfiles//
+
+
+"
+" Turn on that syntax highlighting
+syntax on
+
+"set noexpandtab
+set shiftwidth=4
+set tabstop=4
+set et
+setlocal cindent
+
+" Why is this not a default
+set hidden
+set noreadonly
+"
+" Don't update the display while executing macros
+set lazyredraw
+"
+" At least let yourself know what mode you're in
+set showmode
+"
+" Enable enhanced command-line completion. Presumes you have compiled
+" with +wildmenu.  See :help 'wildmenu'
+set path+=**
+set wildmode=longest:full
+set wildmenu
+
+" Display line and column number in bottom ruler.
+set ruler
+
+" Display the line numbers.
+set number
+set cursorline
+
+" Activate syntax highlighting.
+syntax enable
+
+"set colorcolumn=80
+"highlight ColorColumn ctermbg=darkgray
+"autocmd VimEnter * highlight Normal ctermbg=none
+
+nnoremap Q <Nop>
+nnoremap <F9> :set ignorecase! ignorecase?<CR>
+
+"nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+"imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+:nnoremap <F3> "=strftime("%a %d %b %Y")<CR>Pa - Oleksiy Kyrylenko: <ESC>
+:inoremap <F3> <C-R>=strftime("%a %d %b %Y")<CR> - Oleksiy Kyrylenko: 
+

@@ -105,19 +105,14 @@ ROS_SETUP="/opt/ros/kinetic/setup.zsh"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias lftp-svn="lftp -u F56118B http://itven1mantis1.mmemea.marelliad.net/dream2/DREAM2/Branches/"
-alias marellipt="sudo marelli-proxy apt-get"
-alias lock="cmatrix; slock"
 alias screencast="avconv -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0+0,0 "
 alias fork="fork &> /dev/null"
 alias gitlog="git log --graph --all --decorate=full"
-alias start-gpg-agent="gpg-agent --daemon --write-env-file $HOME/.env"
-alias source-gpg-agent="source $HOME/.env"
 alias to-clipboard="xclip -selection clipboard -i"
+alias rmbuild='if [ `basename $PWD` = "build" -a -e CMakeCache.txt ]; then rm -rvf *; else echo "\e[31mRecursive remove conditions not met\e[0m"; fi'
 
-export repo_server="F09620C@itven1mantis1.mmemea.marelliad.net"
-export repo="ssh://F09620C@itven1mantis1.mmemea.marelliad.net:/san1/git/technology_innovation"
-
-alias repo-list="ssh $repo_server 'ls /san1/git/technology_innovation/'"
+#variables
+TRASH_FOLDER=$HOME/trash
+source $HOME/.project-path.sh
 
 export HISTSIZE=10000000

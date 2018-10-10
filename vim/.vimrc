@@ -8,12 +8,19 @@ execute pathogen#infect()
 filetype plugin on
 filetype indent on
 filetype plugin indent on
+
+" Store swapfiles into a single directory
+" First create
+" mkdir -p $HOME/.vim/swapfiles
+set directory=$HOME/.vim/swapfiles//
+
+
 "
 " Turn on that syntax highlighting
 syntax on
 
 "colorscheme base16-gruvbox-light-soft
-colorscheme base16-zenburn
+"colorscheme base16-zenburn
 let base16colorspace=256
 
 "set noexpandtab
@@ -70,7 +77,7 @@ let Tlist_Highlight_Tag_On_BufEnter = 1 "highlight current tag in taglist window
 let Tlist_Process_File_Always = 1 "even without taglist window, create tags file, required for displaying tag in statusline
 let Tlist_Use_Right_Window = 1 "display taglist window on the right
 let Tlist_Display_Prototype = 1 "display full prototype instead of just function name
-"let Tlist_Ctags_Cmd = /path/to/exuberant/ctags
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -86,6 +93,7 @@ set diffopt+=vertical
 " Unimpaired
 " modified plugin use 'i' to change between buffers
 
+nnoremap Q <Nop>
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F5> :TlistToggle<CR>
 nnoremap <F6> :TlistShowPrototype<CR>
@@ -97,6 +105,12 @@ nnoremap <F9> :set ignorecase! ignorecase?<CR>
 "imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 :nnoremap <F3> "=strftime("%a %d %b %Y")<CR>Pa - Oleksiy Kyrylenko: <ESC>
 :inoremap <F3> <C-R>=strftime("%a %d %b %Y")<CR> - Oleksiy Kyrylenko: 
+
+" Clang format bindings
+map <C-K> :py3f ~/bin/clang-format.py<cr>
+imap <C-K> <c-o>:py3f ~/bin/clang-format.py<cr>
+
+
 
 "highlight MyTagListTagName guibg=lightblue ctermbg=lightblue
 "highlight Search guibg=lightblue ctermbg=lightblue guifg=black ctermfg=black

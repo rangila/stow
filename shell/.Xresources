@@ -11,6 +11,9 @@ URxvt*saveLines: 12000
 URxvt*font: xft:Hack:pixelsize=16
 URxvt*boldFont: xft:Hack:bold:pixelsize=16
 
+//URxvt*font: xft:Terminus:pixelsize=12
+//URxvt*boldFont: xft:Terminus:bold:pixelsize=12
+
 URxvt*scrollBar: false
 
 URxvt*scrollBar_right: false
